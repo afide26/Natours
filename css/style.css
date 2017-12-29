@@ -53,13 +53,18 @@ body {
   top: 40%;
   left: 50%;
   /* Transform relates to the size of the element being positioned */
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+
+  /* Since there is an element displayed as an inline-block inside this parent div, it can be treated as text  */
+  /* hence the rule below can be applied */
+  text-align:center;
 }
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* To remove the upwards shaky movement of the heading primary main and sub */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -110,4 +115,35 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+/* Pseudo classes. Using the state of the selector */
+/* E.g. visited, link, active, hover */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  /* Rule for all transtions to be on the main link */
+  transition: all .2s;
+}
+
+
+.btn:hover { 
+  transform: translateY(-3px);
+  /* ADD Shadow when hovered */
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  /* ADD Shadow when clicked */
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
