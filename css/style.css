@@ -117,6 +117,22 @@ body {
   }
 }
 
+/* Section 2 - Lecture 10: Animation for button move */
+@keyframes moveInBottom { 
+  0% {
+    opacity: 0;
+    transform: translateY(30px)
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Pseudo classes. Using the state of the selector */
 /* E.g. visited, link, active, hover */
 .btn:link,
@@ -128,6 +144,7 @@ body {
   border-radius: 100px;
   /* Rule for all transtions to be on the main link */
   transition: all .2s;
+  position: relative;
 }
 
 
@@ -146,4 +163,40 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* Section 2 Lecture 10 Lesson - Pseudo elements */
+/* In this lesson, a larger version of the button will appear behind the original */
+/* button using hover. .btn::after will be used */
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+/* Add the transform rule to scale when .btn:hover::after is applied */
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* Apply button animation to a new class to make effect exclusive to animated buttons only */
+/* Note animation formula: animation name, animation duration, animation timing function and animation-delay; */
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out .75s;
+  /* Apply 0% animation effect to the button using animation fill mode */
+  animation-fill-mode: backwards;
 }
