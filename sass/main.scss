@@ -1,39 +1,58 @@
+
+// Colors
+$color-primary: #7ed56f; 
+$color-primary-light:#55c57a;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /* Root font size */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
-  color: #777;
+  color:$color-grey-dark;
   font-family: "Lato", Arial, sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
   padding: 3rem;
+
   /* Force inherit box-sizing to all elements */
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image:linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark,0.8)),  
+    url('../img/hero.jpg');
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
+  position: relative;
+}
 
 .header__logo-box {
   position: absolute;
-  top: 4rem;
-  left: 4rem; }
+  top:4rem;
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__text-box {
   position: absolute;
@@ -43,16 +62,18 @@ body {
   left: 50%;
   /* Transform relates to the size of the element being positioned */
   transform: translate(-50%, -50%);
+
   /* Since there is an element displayed as an inline-block inside this parent div, it can be treated as text  */
   /* hence the rule below can be applied */
-  text-align: center; }
-
+  text-align:center;
+}
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   /* To remove the upwards shaky movement of the heading primary main and sub */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+}
 
 .heading-primary--main {
   display: block;
@@ -61,7 +82,8 @@ body {
   letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 1s;
-  animation-timing-function: ease-out; }
+  animation-timing-function: ease-out;
+}
 
 .heading-primary--sub {
   display: block;
@@ -69,38 +91,55 @@ body {
   font-weight: 700;
   letter-spacing: 1.75rem;
   /* Shorthand used here */
-  animation: moveInRight 1s ease-out; }
+  animation: moveInRight 1s ease-out;
+}
 
-@keyframes moveInLeft {
+@keyframes moveInLeft { 
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
   80% {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
-@keyframes moveInRight {
+
+@keyframes moveInRight { 
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /* Section 2 - Lecture 10: Animation for button move */
-@keyframes moveInBottom {
+@keyframes moveInBottom { 
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem)
+  }
   80% {
-    transform: translateY(-1rem); }
+    transform: translateY(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(0);
+  }
+}
 
 /* Pseudo classes. Using the state of the selector */
 /* E.g. visited, link, active, hover */
@@ -114,48 +153,59 @@ body {
   /* Rule for all transtions to be on the main link */
   transition: all .2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
-.btn:hover {
-  transform: translateY(-0.3rem);
+
+.btn:hover { 
+  transform: translateY(-.3rem);
   /* ADD Shadow when hovered */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
 
 .btn:active {
-  transform: translateY(-0.1rem);
+  transform: translateY(-.1rem);
   /* ADD Shadow when clicked */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
 
 .btn--white {
-  background-color: #fff;
-  color: #777; }
+  background-color: $color-white;
+  color: $color-grey-dark;
+}
 
 /* Section 2 Lecture 10 Lesson - Pseudo elements */
 /* In this lesson, a larger version of the button will appear behind the original */
 /* button using hover. .btn::after will be used */
+
 .btn::after {
   content: "";
   display: inline-block;
   height: 100%;
   width: 100%;
   border-radius: 10rem;
-  position: absolute;
+  position: absolute; 
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all .4s;
+}
 
 .btn--white::after {
-  background-color: #fff; }
+  background-color: $color-white;
+}
 
 /* Add the transform rule to scale when .btn:hover::after is applied */
+
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 /* Apply button animation to a new class to make effect exclusive to animated buttons only */
 /* Note animation formula: animation name, animation duration, animation timing function and animation-delay; */
 .btn--animated {
   animation: moveInBottom 0.5s ease-out .75s;
   /* Apply 0% animation effect to the button using animation fill mode */
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
