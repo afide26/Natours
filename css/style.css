@@ -26,26 +26,23 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  /* Top and left relate to the parent element, hence the position of the parent 
-  being relative */
-  top: 40%;
-  left: 50%;
-  /* Transform relates to the size of the element being positioned */
-  transform: translate(-50%, -50%);
-  /* Since there is an element displayed as an inline-block inside this parent div, it can be treated as text  */
-  /* hence the rule below can be applied */
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* Top and left relate to the parent element, hence the position of the parent 
+    being relative */
+    top: 40%;
+    left: 50%;
+    /* Transform relates to the size of the element being positioned */
+    transform: translate(-50%, -50%);
+    /* Since there is an element displayed as an inline-block inside this parent div, it can be treated as text  */
+    /* hence the rule below can be applied */
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -53,23 +50,21 @@ body {
   /* To remove the upwards shaky movement of the heading primary main and sub */
   backface-visibility: hidden;
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /* Shorthand used here */
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* Shorthand used here */
+    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -104,58 +99,51 @@ body {
 
 /* Pseudo classes. Using the state of the selector */
 /* E.g. visited, link, active, hover */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  /* Rule for all transtions to be on the main link */
-  transition: all .2s;
-  position: relative;
-  font-size: 1.6rem; }
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* ADD Shadow when hovered */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-0.1rem);
-  /* ADD Shadow when clicked */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* Section 2 Lecture 10 Lesson - Pseudo elements */
-/* In this lesson, a larger version of the button will appear behind the original */
-/* button using hover. .btn::after will be used */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-/* Add the transform rule to scale when .btn:hover::after is applied */
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-/* Apply button animation to a new class to make effect exclusive to animated buttons only */
-/* Note animation formula: animation name, animation duration, animation timing function and animation-delay; */
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out .75s;
-  /* Apply 0% animation effect to the button using animation fill mode */
-  animation-fill-mode: backwards; }
+.btn {
+  /* Section 2 Lecture 10 Lesson - Pseudo elements */
+  /* In this lesson, a larger version of the button will appear behind the original */
+  /* button using hover. &::after will be used */
+  /* Add the transform rule to scale when &:hover::after is applied */
+  /* Apply button animation to a new class to make effect exclusive to animated buttons only */
+  /* Note animation formula: animation name, animation duration, animation timing function and animation-delay; */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* Rule for all transtions to be on the main link */
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* ADD Shadow when hovered */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    /* ADD Shadow when clicked */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out .75s;
+    /* Apply 0% animation effect to the button using animation fill mode */
+    animation-fill-mode: backwards; }
