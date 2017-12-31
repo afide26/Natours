@@ -72,6 +72,38 @@ body {
     /* Shorthand used here */
     animation: moveInRight 1s ease-out; }
 
+.row {
+  max-width: 114rem;
+  background-color: rgba(119, 119, 119, 0.167);
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row:after {
+    content: "";
+    clear: both;
+    display: table; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left;
+    color: #eee;
+    text-align: center;
+    font-size: 2rem;
+    height: calc(8rem * .75); }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 2rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 2rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 2rem)/3); }
+  .row .col-2-of-3 {
+    width: calc((2 * ((100% - 2 * 2rem)/3)) + 2rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 2rem)/4); }
+  .row .col-2-of-4 {
+    width: calc( 2* ((100% - 3 * 2rem)/4) + 2rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 2rem)/4) + 2 * 2rem); }
+
 /* Pseudo classes. Using the state of the selector */
 /* E.g. visited, link, active, hover */
 .btn {
