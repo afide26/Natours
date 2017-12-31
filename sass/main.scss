@@ -1,219 +1,28 @@
-
-// Colors
-$color-primary: #7ed56f; 
-$color-primary-light:#55c57a;
-$color-primary-dark: #28b485;
-$color-grey-dark: #777;
-$color-white: #fff;
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-/* Root font size */
-html {
-  font-size: 62.5%;
-}
-
-body {
-  color:$color-grey-dark;
-  font-family: "Lato", Arial, sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  padding: 3rem;
-
-  /* Force inherit box-sizing to all elements */
-  box-sizing: border-box;
-}
-
-.header {
-  height: 95vh;
-  background-image:linear-gradient(
-    to right bottom, 
-    rgba($color-primary-light, 0.8),
-    rgba($color-primary-dark,0.8)),  
-    url('../img/hero.jpg');
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
-
-  &__logo-box {
-    position: absolute;
-    top:4rem;
-    left: 4rem;
-  }
-  
-  &__logo {
-    height: 3.5rem;
-  }
-  
-  &__text-box {
-    position: absolute;
-    /* Top and left relate to the parent element, hence the position of the parent 
-    being relative */
-    top: 40%;
-    left: 50%;
-    /* Transform relates to the size of the element being positioned */
-    transform: translate(-50%, -50%);
-  
-    /* Since there is an element displayed as an inline-block inside this parent div, it can be treated as text  */
-    /* hence the rule below can be applied */
-    text-align:center;
-  }
-}
+// Place abstract files on top
+@import 'abstract/functions';
+@import 'abstract/mixins';
+@import 'abstract/variables';
 
 
-.heading-primary {
-  color: $color-white;
-  text-transform: uppercase;
-  /* To remove the upwards shaky movement of the heading primary main and sub */
-  backface-visibility: hidden;
-  margin-bottom: 6rem;
-  
-  &--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-  }
-  
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    /* Shorthand used here */
-    animation: moveInRight 1s ease-out;
-  }
-}
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'pages/home';
+
+@import 'components/button';
+@import 'layout/header';
 
 
 
-@keyframes moveInLeft { 
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
 
 
-@keyframes moveInRight { 
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
 
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
 
-/* Section 2 - Lecture 10: Animation for button move */
-@keyframes moveInBottom { 
-  0% {
-    opacity: 0;
-    transform: translateY(3rem)
-  }
-  80% {
-    transform: translateY(-1rem);
-  }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* Pseudo classes. Using the state of the selector */
-/* E.g. visited, link, active, hover */
 
-.btn {
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    /* Rule for all transtions to be on the main link */
-    transition: all .2s;
-    position: relative;
-    font-size: 1.6rem;
-  }
-  
-  
-  &:hover { 
-    transform: translateY(-.3rem);
-    /* ADD Shadow when hovered */
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-  }
-  
-  &:active {
-    transform: translateY(-.1rem);
-    /* ADD Shadow when clicked */
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-  }
-  
-  &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-    &::after {
-      background-color: $color-white;
-    }
-  }
-  
-  /* Section 2 Lecture 10 Lesson - Pseudo elements */
-  /* In this lesson, a larger version of the button will appear behind the original */
-  /* button using hover. &::after will be used */
-  
-  &::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-  }
-  
 
-  
-  /* Add the transform rule to scale when &:hover::after is applied */
-  
-  &:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-  }
-  
-  /* Apply button animation to a new class to make effect exclusive to animated buttons only */
-  /* Note animation formula: animation name, animation duration, animation timing function and animation-delay; */
-  &--animated {
-    animation: moveInBottom 0.5s ease-out .75s;
-    /* Apply 0% animation effect to the button using animation fill mode */
-    animation-fill-mode: backwards;
-  }
-}
+
+

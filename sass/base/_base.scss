@@ -1,0 +1,19 @@
+// Place all styles for 
+//  - Resets
+//  - HTML and body styling here
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Root font size */
+html {
+  // Defines the size of 1rem
+  font-size: 62.5%;
+}
+
