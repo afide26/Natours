@@ -3,7 +3,7 @@
 // Define a width for the row. Current standard is 1140px;
 .row {
   max-width: $grid-width;
-  background-color: $color-grey-light;
+  // background-color: $color-grey-light;
   margin: 0 auto;
   
   &:not(:last-child) {
@@ -14,15 +14,15 @@
   
   // Use an attribute selector to style all .col- class using ^ symbol
   [class^="col-"] {
-    background-color: orangered;
+    // background-color: orangered;
     float:left;
-    color: $color-white;
+    color: $color-grey-dark;
     &:not(:last-child){
       margin-right: $gutter-horizontal;
     }
-    text-align:center;
-    font-size: 2rem;
-    height: calc(#{$gutter-vertical} * .75);
+    // text-align:center;
+    font-size: 1rem;
+    // height: calc(#{$gutter-vertical} * .75);
   }
 
 
