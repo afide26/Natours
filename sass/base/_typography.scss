@@ -38,7 +38,7 @@ body {
   }
 }
 
-// Secondary heading 
+// Secondary heading H2
 .heading-secondary {
   font-size: 3.5rem;
   text-transform: uppercase;
@@ -56,5 +56,22 @@ body {
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: .5rem 1rem 2rem rgba($color-black, .1);
+  }
+}
+
+
+// Tertiary heading H3
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  text-transform: uppercase;
+  color: $color-grey-dark;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  &:not(:last-child){
+    margin-bottom: 3rem;
   }
 }

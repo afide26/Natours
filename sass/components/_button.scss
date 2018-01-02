@@ -11,7 +11,7 @@
     /* Rule for all transtions to be on the main link */
     transition: all .2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
   
   
@@ -67,5 +67,30 @@
     animation: moveInBottom 0.5s ease-out .75s;
     /* Apply 0% animation effect to the button using animation fill mode */
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 5px;
+    font-size: $default-font-size;
+    transition: all .2s;
+  }
+
+  &:hover{
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 1rem rgba($color-black, .15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);   
   }
 }
