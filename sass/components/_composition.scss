@@ -2,7 +2,7 @@
   position: relative;
   &__photo {
     width: 55%;
-    box-shadow: 0 1.4rem 4rem rgba($color-black, .4);
+    @include boxShadow;
     border-radius: 2px;
     position: absolute;
     z-index: 10;

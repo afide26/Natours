@@ -51,7 +51,7 @@ body {
   box-sizing: border-box; }
 
 .heading-primary {
-  color: #eee;
+  color: #fff;
   text-transform: uppercase;
   /* To remove the upwards shaky movement of the heading primary main and sub */
   backface-visibility: hidden;
@@ -166,10 +166,10 @@ body {
     /* ADD Shadow when clicked */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn--white {
-    background-color: #eee;
+    background-color: #fff;
     color: #777; }
     .btn--white::after {
-      background-color: #eee; }
+      background-color: #fff; }
   .btn::after {
     content: "";
     display: inline-block;
@@ -200,7 +200,7 @@ body {
 
 .btn-text:hover {
   background-color: #7ed56f;
-  color: #eee;
+  color: #fff;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
 
@@ -208,11 +208,44 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    color: #fff;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all 0.8s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+
 .composition {
   position: relative; }
   .composition__photo {
     width: 55%;
-    box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     position: absolute;
     z-index: 10;
@@ -236,7 +269,7 @@ body {
     transform: scale(0.95); }
 
 .feature-box {
-  background-color: rgba(238, 238, 238, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
   padding: 2.5rem;
   text-align: center;
@@ -293,3 +326,8 @@ body {
   transform: skewY(-7deg); }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -11rem; }
