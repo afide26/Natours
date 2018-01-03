@@ -34,6 +34,15 @@
       background-color: $color-white;
     }
   }
+
+  &--green {
+    text-align: center;
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      background-color: $color-primary;
+    }
+  }
   
   /* Section 2 Lecture 10 Lesson - Pseudo elements */
   /* In this lesson, a larger version of the button will appear behind the original */
