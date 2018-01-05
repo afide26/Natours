@@ -1,0 +1,71 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba($color-white, 0.45);
+  border-radius: 3px;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  
+  &__shape {
+    
+    width: 15rem;
+    height: 15rem;
+    float: left;
+
+    // Declare a property to make text follow the shape's contour
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    // Use clip-path to make a circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    // Use transform to move the shape
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+
+  & > * {
+    transform: translateX(-12deg);
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    // backface-visibility: hidden;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-align: center;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 0.5s;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+  }
+
+  &:hover &__caption {
+    opacity:1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    // Use filter property with blur and brightness values
+    filter: blur(3px) brightness(80%);
+  }
+}
