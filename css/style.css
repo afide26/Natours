@@ -528,6 +528,50 @@ body {
     /* hence the rule below can be applied */
     text-align: center; }
 
+.footer {
+  background-color: #333;
+  font-size: 1.4rem;
+  padding: 10rem 0;
+  color: #f7f7f7; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    text-decoration: none;
+    background-color: #333;
+    display: inline-block;
+    color: #f7f7f7;
+    font-size: 1.4rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    transition: all .2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #7ed56f;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+    transform: rotate(5deg) scale(1.3); }
+  .footer__copyright {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    width: 80%;
+    color: #f7f7f7;
+    font-size: 1.4rem;
+    font-weight: 100;
+    float: right; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
