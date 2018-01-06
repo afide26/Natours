@@ -336,7 +336,7 @@ body {
       top: 10rem; }
     .composition__photo:hover {
       transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 5rem rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
       z-index: 20;
       outline: 1.5rem solid #7ed56f; }
   .composition:hover .composition__photo:not(:hover) {
@@ -366,7 +366,7 @@ body {
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 3px;
-  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   padding: 6rem;
   padding-left: 9rem;
   font-size: 1.6rem;
@@ -472,3 +472,14 @@ body {
 .section-stories {
   padding: 15rem 0;
   position: relative; }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50.1%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 3px;
+  height: 50rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }

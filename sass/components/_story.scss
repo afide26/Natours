@@ -3,7 +3,7 @@
   margin: 0 auto;
   background-color: rgba($color-white, 0.45);
   border-radius: 3px;
-  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  @include boxShadow;
   padding: 6rem;
   padding-left: 9rem;
   font-size: $default-font-size;
