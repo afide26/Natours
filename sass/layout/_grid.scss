@@ -3,26 +3,39 @@
 // Define a width for the row. Current standard is 1140px;
 .row {
   max-width: $grid-width;
-  // background-color: $color-grey-light;
   margin: 0 auto;
+  
+  @include respond(tab-port){
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+  
+    @include respond(tab-port){
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   @include clearfix;
   
   // Use an attribute selector to style all .col- class using ^ symbol
   [class^="col-"] {
-    // background-color: orangered;
     float:left;
-    color: $color-grey-dark;
     &:not(:last-child){
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port){
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+
     }
-    // text-align:center;
-    font-size: 1rem;
-    // height: calc(#{$gutter-vertical} * .75);
+    @include respond(tab-port){
+      width: 100% !important;
+    }
   }
 
 
