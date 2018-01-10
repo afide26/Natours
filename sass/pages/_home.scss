@@ -2,11 +2,15 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include respond(tab-port){
+    padding: 20rem 0;
+  }
 }
 
 .section-features{
   padding: 20rem 0;
-  height: 95vh;
+  min-height: 95vh;
   margin-top:-10rem;
   background-image:linear-gradient(
     to right bottom, 
@@ -14,10 +18,25 @@
     rgba($color-primary-dark,0.8)),  
     url('../img/nat-4.jpg');
     background-size: cover;
-    transform: skewY(-7deg);
+    transform: skewY(-3deg);
     
     & > * {
-      transform: skewY(7deg);
+      transform: skewY(3deg);
+    }
+
+    @include respond(tab-port){
+      padding: 10rem 0;
+      background-image:linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark,0.8)),  
+        url('../img/nat-4.jpg');
+        background-size: cover;
+        transform: skewY(-7deg);
+        
+        & > * {
+          transform: skewY(7deg);
+        }
     }
 }
 
@@ -27,16 +46,33 @@
   margin-top: -11rem;
 
   transition: all 5s ease-in;
+
+  @include respond(tab-port){
+    margin-top: 0 !important;
+    padding: 10rem 0 10rem 0;
+  }
 }
 
 .section-stories {
   padding: 15rem 0;
   position:relative;
+
+  @include respond(tab-port){
+    padding: 10rem 0;
+  }
 }
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+  background-image: linear-gradient(
+    to right bottom, 
+    $color-primary-light, 
+    $color-primary-dark);
+
+
+  @include respond(tab-port){
+    padding: 10rem 0;
+  }
 }
 
 .book {

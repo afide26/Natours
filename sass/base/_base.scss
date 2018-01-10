@@ -13,22 +13,16 @@
 
 /* Root font size */
 html {
-  // Defines the size of 1rem == 10px
+
   font-size: 62.5%;
-
-
-  // @include respond(phone){
-  //   font-size: 50%;
-  // }
-
-
-
+  
   @include respond(tab-land){
     font-size: 56.25%; //or 9px 9/16 = 56.25%
   }
 
   @include respond(tab-port){
-    font-size: 50%; // or 8px 8/16 = 50%
+    // font-size: 50%; // or 8px 8/16 = 50%
+    font-size: 8px !important;
   }
 
   @include respond(phone){

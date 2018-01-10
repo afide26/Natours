@@ -9,19 +9,42 @@
     transition: all .2s;
     outline-offset: 2rem;
 
+    @include respond(tab-port){
+      position: relative;
+      float:left;
+      width: 33.333333%;
+      @include boxShadow;
+    }
+
     &--p1 {
       left: 0;
       top: -2rem;
+
+      @include respond(tab-port){
+        top:1rem;
+        transform: scale(1.2);
+      }
     }
 
     &--p2 {
       right: 0;
       top:2rem;
+
+      @include respond(tab-port){
+        top:-1rem;
+        transform: scale(1.3);
+        z-index: 100;
+      }
     }
 
     &--p3 {
       left: 20%;
       top:10rem;
+      @include respond(tab-port){
+        top:1.5rem;
+        transform: scale(1.2);
+        left:0;
+      }
     }
 
     &:hover {

@@ -8,7 +8,13 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
-  
+
+  @include respond(tab-port){
+    width: 100%;
+    padding: 4rem;
+    padding-left: 9rem;
+  }
+
   &__shape {
     
     width: 15rem;
