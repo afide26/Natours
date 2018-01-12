@@ -17,16 +17,16 @@ html {
   font-size: 62.5%;
   
   @include respond(tab-land){
-    font-size: 56.25%; //or 9px 9/16 = 56.25%
+    font-size: 56.25% !important; //or 9px 9/16 = 56.25%
   }
 
   @include respond(tab-port){
     // font-size: 50%; // or 8px 8/16 = 50%
-    font-size: 8px !important;
+    font-size: 50% !important;
   }
 
   @include respond(phone){
-    font-size: 43.75%; // or 7px 7/16 = 43.75%
+    font-size: 43.75% !important; // or 7px 7/16 = 43.75%
   }
 
   @include respond(big-desktop){

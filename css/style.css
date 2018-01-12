@@ -59,13 +59,13 @@ html {
   font-size: 62.5%; }
   @media (max-width: 75em) {
     html {
-      font-size: 56.25%; } }
+      font-size: 56.25% !important; } }
   @media (max-width: 56.25em) {
     html {
-      font-size: 8px !important; } }
+      font-size: 50% !important; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 43.75%; } }
+      font-size: 43.75% !important; } }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -109,6 +109,9 @@ body {
     letter-spacing: 1.75rem;
     /* Shorthand used here */
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 56.25em) {
+      .heading-primary--sub {
+        letter-spacing: 1.5rem; } }
     @media (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: .5rem; } }
@@ -126,11 +129,10 @@ body {
   transition: all .2s; }
   @media (max-width: 56.25em) {
     .heading-secondary {
-      font-size: 3rem; } }
+      display: inline-block; } }
   @media (max-width: 37.5em) {
     .heading-secondary {
-      letter-spacing: 1px;
-      font-size: 2.5rem; } }
+      letter-spacing: 1px; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.1); }
@@ -296,7 +298,8 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem; }
+  height: 52rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
   .card__side {
     font-size: 2rem;
     height: 52rem;
@@ -306,9 +309,8 @@ body {
     left: 0;
     width: 100%;
     backface-visibility: hidden;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    border-radius: 3px;
+    overflow: hidden; }
     .card__side--front {
       background-color: #fff; }
     .card__side--back {
@@ -386,6 +388,34 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        border-radius: 1px; }
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      .card:hover .card__side--front {
+        transform: rotateY(0deg); }
+      .card__details {
+        padding: 1rem 3rem; }
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 4rem; } }
 
 .composition {
   position: relative; }
@@ -476,7 +506,10 @@ body {
     .story {
       width: 100%;
       padding: 4rem;
-      padding-left: 9rem; } }
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -487,6 +520,9 @@ body {
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative; }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
   .story > * {
     transform: translateX(-12deg); }
   .story__img {
@@ -494,6 +530,9 @@ body {
     transform: translateX(-4rem) scale(1.4); }
   .story__text {
     transform: skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -544,6 +583,9 @@ body {
   width: 90%;
   display: block;
   transition: all .3s .1s; }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -569,6 +611,10 @@ body {
 .form__radio-group {
   width: 49.5%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-label {
   font-size: 1.6rem;
@@ -945,8 +991,20 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50.1%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 3px;
-  height: 50rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65.3%), url(../img/nat-10.jpg); } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%;
+        padding: 3rem; } }

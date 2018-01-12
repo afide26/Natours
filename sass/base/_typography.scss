@@ -36,7 +36,10 @@ body {
     letter-spacing: 1.75rem;
     /* Shorthand used here */
     animation: moveInRight 1s ease-out;
-
+    
+    @include respond(tab-port){
+      letter-spacing: 1.5rem;
+    }
     @include respond(phone){
       letter-spacing: .5rem;
     }
@@ -59,11 +62,10 @@ body {
   transition: all .2s;
 
   @include respond(tab-port){
-    font-size: 3rem;
+    display: inline-block;
   }
   @include respond(phone){
     letter-spacing: 1px;
-    font-size: 2.5rem;
   }
 
   &:hover {
