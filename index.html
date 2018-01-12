@@ -32,7 +32,6 @@
           </ul>
         </nav>
       </div>
-
       <header class="header">
         <div class="header__logo-box">
           <img src="img/logo-white.png" alt="Logo" class="header__logo">
@@ -77,9 +76,22 @@
               </div>
               <div class="col-1-of-2">
                 <div class="composition">
-                  <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                  <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                  <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+
+                  <img alt="Photo 1" srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                       sizes="(max-width:900px) 18vw, (max-width:600px) 30vw, 300px"
+                       class="composition__photo composition__photo--p1"
+                       src="img/nat-1-large.jpg"/>
+
+                  <img alt="Photo 2" srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                  sizes="(max-width:900px) 18vw, (max-width:600px) 30vw, 300px"
+                  class="composition__photo composition__photo--p2"
+                  src="img/nat-2-large.jpg"/>
+
+                  <img alt="Photo 3" srcset="img/nat-3.jpg 300w, img/nat-1-large.jpg 1000w"
+                  sizes="(max-width:900px) 18vw, (max-width:600px) 30vw, 300px"
+                  class="composition__photo composition__photo--p3"
+                  src="img/nat-3-large.jpg"/>
+
                 </div>
               </div>
             </div>
@@ -264,7 +276,10 @@
             <!-- First story -->
             <div class="story">
               <figure class="story__shape">
-                <img class="story__img" src="img/nat-8.jpg" alt="Person on a tour">
+                <img alt="Person on a tour" srcset="img/nat-8-small.jpg 300w, img/nat-8.jpg 2000w"
+                sizes="(max-width:900px) 31vw, (max-width:600px) 32vw, 300px"
+                class="story__img"
+                src="img/nat-8.jpg"/>
                 <figcaption class="story__caption">Mary Smith</figcaption>
               </figure>
               <div class="story__text">
@@ -282,7 +297,10 @@
             <!-- Start of second story -->
             <div class="story">
               <figure class="story__shape">
-                <img class="story__img" src="img/nat-9.jpg" alt="Person on a tour">
+                <img alt="Person on a tour" srcset="img/nat-9-small.jpg 300w, img/nat-9.jpg 2000w"
+                sizes="(max-width:900px) 31vw, (max-width:600px) 32vw, 300px"
+                class="story__img"
+                src="img/nat-9.jpg"/>
                 <figcaption class="story__caption">Alan Fidelino</figcaption>
               </figure>
               <div class="story__text">
@@ -355,7 +373,11 @@
       <!-- Start of footer -->
       <footer class="footer">
         <div class="footer__logo-box">
-          <img src="img/logo-green-2x.png" alt="Full Logo" class="footer__logo">
+          <picture class="footer__logo">
+            <source srcset="img/logo-green-small-1x.png 1x, 
+              img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)"/>
+            <img src="img/logo-green-2x.png" alt="Full Logo" srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"/>
+          </picture>
         </div>
         <div class="row">
           <div class="col-1-of-2">
@@ -383,8 +405,14 @@
       <div class="popup" id="popup">
         <div class="popup__content">
           <div class="popup__left">
-            <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img"/>
-            <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img"/>
+              <img alt="Tour Photo" srcset="img/nat-8-small.jpg 300w, img/nat-8.jpg 2000w"
+              sizes="(max-width:900px) 31vw, (max-width:600px) 32vw, 300px"
+              class="popup__img"
+              src="img/nat-8.jpg"/>            
+              <img alt="Tour Photo" srcset="img/nat-9-small.jpg 300w, img/nat-9.jpg 2000w"
+              sizes="(max-width:900px) 31vw, (max-width:600px) 32vw, 300px"
+              class="popup__img"
+              src="img/nat-9.jpg"/>       
           </div>
           <div class="popup__right">
             <a href="#section-tours" class="popup__close">&times;</a>

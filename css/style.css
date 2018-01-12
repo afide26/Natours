@@ -438,7 +438,7 @@ body {
       top: -2rem; }
       @media (max-width: 56.25em) {
         .composition__photo--p1 {
-          top: 1rem;
+          top: .5rem;
           transform: scale(1.2); } }
     .composition__photo--p2 {
       right: 0;
