@@ -697,11 +697,22 @@ body {
   .popup__left {
     width: 33.3333333%;
     display: table-cell; }
+    @media (max-width: 75em) {
+      .popup__left {
+        vertical-align: middle; } }
   .popup__right {
     display: table-cell;
     padding: 3rem 5rem;
     vertical-align: middle;
     width: 66.666667%; }
+    @media (max-width: 37.5em) {
+      .popup__right {
+        width: 90%;
+        padding: 5rem 2rem; }
+        .popup__right .heading-secondary {
+          font-size: 2rem; }
+        .popup__right .heading-tertiary {
+          font-size: 1.2rem; } }
   .popup__img {
     display: block;
     width: 100%; }
@@ -715,6 +726,11 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 56.25em) {
+      .popup__text {
+        column-count: 1;
+        column-gap: 0;
+        column-rule: none; } }
 
 .header {
   height: 95vh;

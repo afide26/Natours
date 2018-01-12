@@ -59,8 +59,11 @@
   }
   &__left{
     width: 33.3333333%;
-   
     display:table-cell;
+    
+    @include respond(tab-land){
+      vertical-align: middle;
+    }
   }
 
   &__right{
@@ -68,6 +71,18 @@
     padding: 3rem 5rem;
     vertical-align: middle;
     width: 66.666667%;
+
+    @include respond(phone){
+      .heading-secondary{
+        font-size:2rem;
+      }
+
+      .heading-tertiary{
+        font-size: 1.2rem;
+      }
+      width:90%;
+      padding: 5rem 2rem;
+    }
   }
   &__img{
     display:block;
@@ -87,5 +102,14 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    // Styling the text for mobile
+    @include respond(tab-port){
+      column-count: 1;
+      column-gap:0;
+      column-rule: none;
+    }
   }
+
+
 }
