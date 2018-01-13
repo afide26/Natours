@@ -16,7 +16,7 @@
     to right bottom, 
     rgba($color-primary-light, 0.8),
     rgba($color-primary-dark,0.8)),  
-    url('../img/nat-4.jpg');
+    url('../img/nat-4-small.jpg');
     background-size: cover;
     transform: skewY(-3deg);
     
@@ -30,13 +30,22 @@
         to right bottom, 
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark,0.8)),  
-        url('../img/nat-4.jpg');
+        url('../img/nat-4-small.jpg');
         background-size: cover;
         transform: skewY(-7deg);
         
         & > * {
           transform: skewY(7deg);
         }
+    }
+    @media (min-resolution: 192dpi) and (min-width:37.5em),
+    (-webkit-min-device-pixel-ratio:2) and (min-width:37.5em),
+    (min-width: 125em){
+      background-image:linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark,0.8)),  
+        url('../img/nat-4.jpg');
     }
 }
 

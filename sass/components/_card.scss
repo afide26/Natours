@@ -3,6 +3,7 @@
   // FUNCTIONALITY
   perspective: 150rem;
   -moz-perspective: 150rem;
+  -webkit-perspective: 150rem;
   position:relative;
   height:52rem;
   @include boxShadow;
@@ -15,6 +16,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow:hidden;
@@ -79,6 +81,7 @@
         ), url(../img/nat-5-small.jpg);
 
         @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio:2) and (min-width:37.5em),
         (min-width:125em) {
           background-image: linear-gradient(
             to right bottom, 
@@ -96,6 +99,7 @@
         ), url(../img/nat-6-small.jpg);
     
         @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio:2) and (min-width:37.5em),
         (min-width:125em) {
           background-image: linear-gradient(
             to right bottom, 
@@ -113,6 +117,7 @@
         ), url(../img/nat-7-small.jpg);
   
         @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio:2) and (min-width:37.5em),
         (min-width:125em) {
           background-image: linear-gradient(
             to right bottom, 
